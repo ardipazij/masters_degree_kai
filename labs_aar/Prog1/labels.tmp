@@ -1,0 +1,27 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega32</DEVICE>
+ <WORKING_DIR>D:\Progs_AVR\Prog1</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\Progs_AVR\Prog1\Prog1.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:\AvrAssembler2\Appnotes\m32def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\Progs_AVR\Prog1\Prog1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>D:\Progs_AVR\Prog1\Prog1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>D:\Progs_AVR\Prog1\Prog1.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <loop><FILE>D:\Progs_AVR\Prog1\Prog1.asm</FILE><LINE>12</LINE></loop>
+  <end><FILE>D:\Progs_AVR\Prog1\Prog1.asm</FILE><LINE>23</LINE></end>
+  <setPA2><FILE>D:\Progs_AVR\Prog1\Prog1.asm</FILE><LINE>20</LINE></setPA2>
+  <setPA3><FILE>D:\Progs_AVR\Prog1\Prog1.asm</FILE><LINE>17</LINE></setPA3>
+ </LABELS>
+</ASSEMBLER_INFO>

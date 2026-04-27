@@ -1,0 +1,27 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega32</DEVICE>
+ <WORKING_DIR>C:\Users\arxie\labs_aar\Prog2</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\arxie\labs_aar\Prog2\Prog2.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes\m32def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\arxie\labs_aar\Prog2\Prog2.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\arxie\labs_aar\Prog2\Prog2.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\arxie\labs_aar\Prog2\Prog2.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <table_fib><FILE>C:\Users\arxie\labs_aar\Prog2\Prog2.asm</FILE><LINE>6</LINE></table_fib>
+  <main><FILE>C:\Users\arxie\labs_aar\Prog2\Prog2.asm</FILE><LINE>20</LINE></main>
+  <loop><FILE>C:\Users\arxie\labs_aar\Prog2\Prog2.asm</FILE><LINE>45</LINE></loop>
+  <end><FILE>C:\Users\arxie\labs_aar\Prog2\Prog2.asm</FILE><LINE>65</LINE></end>
+ </LABELS>
+</ASSEMBLER_INFO>
