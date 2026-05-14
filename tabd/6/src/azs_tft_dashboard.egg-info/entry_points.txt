@@ -1,0 +1,3 @@
+[console_scripts]
+azs-dashboard = azs_tft.dashboard:main
+azs-train-tft = azs_tft.train:main
