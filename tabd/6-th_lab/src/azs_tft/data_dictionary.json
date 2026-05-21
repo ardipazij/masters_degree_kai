@@ -1,0 +1,69 @@
+{
+  "sources": [
+    {
+      "file": "stations_metadata.csv / 5stations_metadata.csv",
+      "role": "Статические характеристики АЗС (редко меняются во времени)."
+    },
+    {
+      "file": "detailed_data.csv / 5stations_data.csv",
+      "role": "Почасовые ряды по каждой АЗС: трафик, погода, маркетинг, цены, продажи топлива по маркам и магазин."
+    },
+    {
+      "file": "описание данных.docx",
+      "role": "Методология генерации и расшифровка групп переменных (синтетический датасет под Татарстан / сеть Татнефть)."
+    }
+  ],
+  "variables": [
+    {"name": "timestamp", "type": "datetime", "description": "Метка времени (часовой шаг)."},
+    {"name": "station_id", "type": "int", "description": "Идентификатор АЗС."},
+    {"name": "station_name", "type": "str", "description": "Название АЗС."},
+    {"name": "road_type", "type": "category", "description": "Тип дороги (федеральная трасса, региональная, городская, объездная)."},
+    {"name": "direction", "type": "category", "description": "Направление потока относительно города: в_город / из_города / транзит."},
+    {"name": "settlement_size", "type": "category", "description": "Размер НП (сельская, малый, средний, крупный, мегаполис)."},
+    {"name": "distance_to_city_km", "type": "float", "description": "Удалённость от города, км."},
+    {"name": "total_pumps", "type": "int", "description": "Суммарное число ТРК на АЗС."},
+    {"name": "shop_area_m2", "type": "int", "description": "Площадь магазина, м²."},
+    {"name": "has_car_wash", "type": "binary", "description": "Наличие автомойки."},
+    {"name": "has_cafe", "type": "binary", "description": "Наличие кафе."},
+    {"name": "has_shop", "type": "binary", "description": "Наличие магазина."},
+    {"name": "competitors_within_5km", "type": "int", "description": "Число конкурентов в радиусе 5 км."},
+    {"name": "corporate_customer_ratio", "type": "float", "description": "Доля корпоративных клиентов."},
+    {"name": "staff_engagement_score", "type": "float", "description": "Оценка вовлечённости персонала (в т.ч. промо)."},
+    {"name": "customer_loyalty_score", "type": "float", "description": "Индекс лояльности клиентов."},
+    {"name": "temperature", "type": "float", "description": "Температура воздуха, °C."},
+    {"name": "weather_condition", "type": "category", "description": "Состояние погоды (ясно, снег, дождь и т.д.)."},
+    {"name": "precipitation_mm", "type": "float", "description": "Осадки, мм."},
+    {"name": "visibility_km", "type": "float", "description": "Видимость, км."},
+    {"name": "wind_speed_ms", "type": "float", "description": "Скорость ветра, м/с."},
+    {"name": "is_snow / is_rain / is_fog", "type": "binary", "description": "Индикаторы погодных явлений."},
+    {"name": "traffic_Passengers_cars", "type": "int", "description": "Трафик: легковые (условные ед./час)."},
+    {"name": "traffic_Truck_short", "type": "int", "description": "Трафик: малотоннажные грузовики."},
+    {"name": "traffic_Truck", "type": "int", "description": "Трафик: грузовики."},
+    {"name": "traffic_Truck_long", "type": "int", "description": "Трафик: фуры."},
+    {"name": "traffic_Transporter", "type": "int", "description": "Трафик: автопоезда/сцепки."},
+    {"name": "traffic_Undefined", "type": "int", "description": "Трафик: не классифицирован."},
+    {"name": "total_traffic", "type": "int", "description": "Суммарный трафик по всем типам."},
+    {"name": "sales_AI92 / AI95 / AI98 / DT_*", "type": "float", "description": "Продажи по маркам топлива, м³ или условные единицы объёма за час."},
+    {"name": "total_fuel_sales", "type": "float", "description": "Суммарные продажи топлива за час."},
+    {"name": "shop_*", "type": "float", "description": "Выручка магазина по категориям и shop_total_revenue."},
+    {"name": "promotion_fuel_active / shop / cafe", "type": "binary", "description": "Акции на топливо, товары, кафе."},
+    {"name": "ad_active", "type": "binary", "description": "Активная рекламная кампания."},
+    {"name": "ad_channel", "type": "category", "description": "Канал рекламы (ТВ, радио, email, соцсети и т.д.)."},
+    {"name": "competitor_price_*", "type": "float", "description": "Цены конкурентов по ключевым маркам."},
+    {"name": "price_*", "type": "float", "description": "Розничные цены сети по маркам топлива."},
+    {"name": "hour, day_of_week, week_of_year, month, quarter, season", "type": "mixed", "description": "Календарные признаки."},
+    {"name": "is_weekend, is_holiday, holiday_name", "type": "mixed", "description": "Выходные и праздники (включая региональные)."},
+    {"name": "is_rush_hour, is_night", "type": "binary", "description": "Час пик / ночной интервал."},
+    {"name": "day_name", "type": "str", "description": "День недели (только в укороченном наборе 5stations_data)."}
+  ],
+  "tft_roles": {
+    "group_ids": ["station_id"],
+    "targets": ["total_fuel_sales", "sales_AI92", "sales_AI95", "sales_AI98", "sales_DT_EURO", "sales_DT_TANEKO", "sales_DT_SUMMER", "sales_DT_WINTER", "shop_total_revenue"],
+    "static_reals": ["distance_to_city_km", "total_pumps", "shop_area_m2", "has_car_wash", "has_cafe", "has_shop", "competitors_within_5km", "corporate_customer_ratio", "staff_engagement_score", "customer_loyalty_score"],
+    "static_categoricals": ["road_type", "direction", "settlement_size"],
+    "time_varying_known_reals": ["hour", "day_of_week", "week_of_year", "month", "quarter", "is_weekend", "is_holiday", "is_rush_hour", "is_night", "promotion_fuel_active", "promotion_shop_active", "promotion_cafe_active", "ad_active", "competitor_price_AI92", "competitor_price_AI95", "competitor_price_DT", "price_AI92", "price_AI95", "price_AI98", "price_DT_EURO", "price_DT_TANEKO", "price_DT_SUMMER", "price_DT_WINTER", "traffic_Passengers_cars", "traffic_Truck_short", "traffic_Truck", "traffic_Truck_long", "traffic_Transporter", "traffic_Undefined", "total_traffic", "temperature", "precipitation_mm", "visibility_km", "wind_speed_ms", "is_snow", "is_rain", "is_fog"],
+    "time_varying_known_categoricals": ["weather_condition", "season", "ad_channel"],
+    "time_varying_unknown_reals": [],
+    "note": "Каждая марка топлива — отдельная цель TFT; сумма и магазин прогнозируются параллельно."
+  }
+}

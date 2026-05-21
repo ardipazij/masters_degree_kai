@@ -1,0 +1,10 @@
+# artifacts/
+# runs/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+lightning_logs/
+*.ckpt
+.env
